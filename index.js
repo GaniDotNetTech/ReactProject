@@ -8,7 +8,9 @@ class App extends Component {
       name: 'React Welcome'
     };
 SwitchNameHandler =()=>{
-console.log('Enabled');
+this.setState({
+  name : 'Changed the Name'
+})
 
 };
   render() {
