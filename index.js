@@ -4,9 +4,10 @@ import Hello from './Hello';
 import './style.css';
 //Manage state Class Based Components
 class App extends Component {
-    state = {
-      name: 'React Welcome'
-    };
+     constructor(props){
+       super(props)
+
+     }
 SwitchNameHandler =()=>{
 this.setState({
   name : 'Changed the Name'
@@ -17,7 +18,7 @@ this.setState({
     return (
       <div>
       <button onClick = {this.SwitchNameHandler}/>
-        <Hello name={this.state.name} />
+        <Hello apptitle = {this.props.apptitle} />
         <p>
           Start editing to see some magic happen :)
         </p>
@@ -26,4 +27,4 @@ this.setState({
   }
 }
 
-render(<App />, document.getElementById('root'));
+render(<App apptitle = 'Person Manager'/>, document.getElementById('root'));
